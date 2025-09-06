@@ -28,5 +28,139 @@
       rel="stylesheet"
     />
   </head>
-  <body></body>
+  <style>
+    .inter {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+    }
+  </style>
+  <body class="inter bg-[#F0FDF4]">
+    <nav class="bg-[#15803D] text-white">
+      <div
+        class="flex md:flex-row flex-col md:justify-between w-11/12 mx-auto items-center py-5"
+      >
+        <h1 class="font-semibold text-xl">Green Earth</h1>
+        <div class="flex md:gap-10 gap-7 md:p-0 md:p-5 p-2">
+          <a href="">About</a>
+          <a href="">Gallery</a>
+          <a href="">Plant a Tree</a>
+        </div>
+        <div>
+          <button
+            class="btn bg-[#facc15] rounded-xl text-green-800 md:block hidden"
+          >
+            Plant a tree
+          </button>
+          <button
+            class="btn btn-xs md:hidden block mt-2 bg-[#facc15] text-green-800"
+          >
+            Plant a tree
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- header section -->
+    <section class="bg-[#CFF0DC] relative h-auto">
+      <div class="flex justify-between">
+        <img
+          src="./hero-leaf1.png"
+          alt=""
+          class="md:w-[420px] w-[90px] h-[100px] md:h-auto mt-[60px]"
+        />
+        <img
+          src="./hero-leaf2.png"
+          alt=""
+          class="md:w-[420px] md:h-auto md:block w-[90px] h-[100px] mt-[60px]"
+        />
+      </div>
+      <div
+        class="absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 top-[15px] left-[20px] text-center"
+      >
+        <h1 class="font-bold md:text-[48px] text-[20px]">
+          Plant a Tree, Grow a Future
+        </h1>
+        <p
+          class="md:text-[16px] text-gray-500 md:p-3 p-[2px] text-[10px] md:m-0 mx-10"
+        >
+          Join our mission to plant 1 million trees and make the Earth greener
+          for future <br />
+          generations.
+        </p>
+        <button
+          class="btn bg-[#facc15] rounded-xl text-green-800 md:block hidden ml-60"
+        >
+          Get Involved
+        </button>
+        <button
+          class="btn btn-xs md:hidden block ml-[130px] mt-2 bg-[#facc15] text-green-800"
+        >
+          Get Involved
+        </button>
+      </div>
+    </section>
+    <!-- plant category section -->
+    <section class="w-11/12 mx-auto">
+      <h1 class="text-center font-semibold text-3xl p-10">
+        Choosee your trees
+      </h1>
+      <div class="grid grid-cols-12">
+        <div class="col-span-2 border-2 border-e-red-600">
+          <!-- category -->
+          <h2>category</h2>
+          <h2>category</h2>
+          <h2>category</h2>
+          <h2>category</h2>
+          <h2>category</h2>
+          <h2>category</h2>
+          <h2>category</h2>
+          <h2>category</h2>
+          <h2>category</h2>
+        </div>
+        <div class="col-span-8">
+          <!-- card -->
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+          <h2 class="border-2 border-e-red-600">card</h2>
+        </div>
+        <div class="col-span-2">
+          <!-- add to cart -->
+          <h2 class="border-2 border-e-red-600">add to cart</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- about plant section -->
+    <section
+      class="mt-10 ml-[293px] mr-[295px] mb-10 border-2 border-e-red-600"
+    >
+      <h1 class="text-center font-semibold text-3xl mb-10">
+        About the Campaign
+      </h1>
+      <div class="flex gap-10">
+        <img src="./about.png" alt="" class="w-[500px] h-[400px]" />
+        <div class="text-gray-800 mt-20">
+          <p>
+            Green Earth is a global tree plantation initiative dedicated to
+            fighting climate change. Since our start, we’ve planted over 500,000
+            trees worldwide. By joining our campaign, you help restore forests,
+            create habitats for wildlife, and combat global warming.
+          </p>
+          <ul class="list-disc ml-8 mt-7">
+            <li>Restoration of natural habitats</li>
+            <li>Improvement of air quality</li>
+            <li>Support for local communities</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
