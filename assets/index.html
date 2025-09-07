@@ -100,61 +100,49 @@
       </div>
     </section>
     <!-- plant category section -->
-    <section class="w-11/12 mx-auto">
+    <section class="w-11/12 mx-auto mt-10">
       <h1 class="text-center font-semibold text-3xl p-10">
         Choosee your trees
       </h1>
+
       <div class="grid grid-cols-12">
-        <div class="col-span-2 border-2 border-e-red-600">
+        <div class="col-span-2" id="category-container">
           <!-- category -->
-          <h2>category</h2>
-          <h2>category</h2>
-          <h2>category</h2>
-          <h2>category</h2>
-          <h2>category</h2>
-          <h2>category</h2>
-          <h2>category</h2>
-          <h2>category</h2>
-          <h2>category</h2>
         </div>
-        <div class="col-span-8">
+        <div class="col-span-8 grid grid-cols-3" id="card-container">
           <!-- card -->
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
-          <h2 class="border-2 border-e-red-600">card</h2>
         </div>
-        <div class="col-span-2">
+        <div class="col-span-2 bg-white h-[800px] w-[250px] rounded shadow-sm">
           <!-- add to cart -->
-          <h2 class="border-2 border-e-red-600">add to cart</h2>
+          <h2 class="p-3 font-semibold text-[18px]">Your Cart</h2>
+          <div class="bg-[#F0FDF4] rounded m-2 p-2 h-[65px]">
+            <div class="flex justify-between items-center">
+              <div>
+                <h2 class="text-[14px]">Mangoo tree</h2>
+                <h3 class="text-[12px] mt-2 text-gray-500">$ price</h3>
+              </div>
+              <i class="fa-solid fa-xmark text-gray-400"></i>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- about plant section -->
-    <section
-      class="mt-10 ml-[293px] mr-[295px] mb-10 border-2 border-e-red-600"
-    >
+    <section class="mt-30 ml-[293px] mr-[295px] mb-10">
       <h1 class="text-center font-semibold text-3xl mb-10">
         About the Campaign
       </h1>
       <div class="flex gap-10">
         <img src="./about.png" alt="" class="w-[500px] h-[400px]" />
-        <div class="text-gray-800 mt-20">
+        <div class="text-gray-800 mt-20 text-[14px]">
           <p>
             Green Earth is a global tree plantation initiative dedicated to
             fighting climate change. Since our start, we’ve planted over 500,000
             trees worldwide. By joining our campaign, you help restore forests,
             create habitats for wildlife, and combat global warming.
           </p>
-          <ul class="list-disc ml-8 mt-7">
+          <ul class="list-disc ml-8 mt-5">
             <li>Restoration of natural habitats</li>
             <li>Improvement of air quality</li>
             <li>Support for local communities</li>
@@ -162,5 +150,70 @@
         </div>
       </div>
     </section>
+    <!-- our impact section -->
+    <section class="bg-[#CFF0DC]">
+      <h1 class="text-center font-semibold text-3xl mb-10 pt-20">Our Impact</h1>
+      <div class="flex gap-10 md:flex-row flex-col w-11/12 mx-auto">
+        <div
+          class="border-1 border-gray-300 bg-white w-[450px] h-[156px] text-center p-10 rounded-xl mb-20"
+        >
+          <h1 class="text-green-800 font-semibold text-[32px]">120K+</h1>
+          <p class="text-gray-600 text-[16px]">Communities Involved</p>
+        </div>
+        <div
+          class="border-1 border-gray-300 bg-white w-[450px] h-[156px] text-center p-10 rounded-xl mb-20"
+        >
+          <h1 class="text-green-800 font-semibold text-[32px]">30K+</h1>
+          <p class="text-gray-600 text-[16px]">Countries Reached</p>
+        </div>
+        <div
+          class="border-1 border-gray-300 bg-white w-[450px] h-[156px] text-center p-10 rounded-xl mb-20"
+        >
+          <h1 class="text-green-800 font-semibold text-[32px]">500K+</h1>
+          <p class="text-gray-600 text-[16px]">Tree Planted</p>
+        </div>
+      </div>
+    </section>
+    <!-- plant a tree -->
+    <section class="bg-[#166534] h-[450px]">
+      <h1 class="text-center font-semibold text-2xl mb-5 pt-20 text-white">
+        Plant a Tree Today
+      </h1>
+      <div
+        class="bg-white/10 p-9 w-[470px] h-[240px] mx-[530px] rounded-[10px] shadow-xl"
+      >
+        <div>
+          <input type="text" placeholder="Your Name" class="input w-[400px]" />
+          <input
+            type="text"
+            placeholder="Your Email Address"
+            class="input w-[400px] mt-2"
+          />
+          <select class="select mt-2 text-gray-900 w-[400px]">
+            <option disabled selected>Number of trees</option>
+            <option>1 tree - $5</option>
+            <option>5 tree - $50</option>
+            <option>10 tree - $200</option>
+          </select>
+
+          <button
+            type="button"
+            class="btn bg-[#facc15] mt-2 w-[400px] font-bold rounded-xl border-0 shadow-none text-green-800"
+          >
+            Donate Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section -->
+    <section class="bg-[#14532D] h-[72px]">
+      <p class="text-center text-white pt-8 font-extralight text-[16px]">
+        © 2025 Green Earth. All Rights Reserved.
+      </p>
+    </section>
+
+    <!-- js script -->
+    <script src="./script.js"></script>
   </body>
 </html>
