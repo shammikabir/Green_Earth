@@ -108,12 +108,13 @@
       <div class="grid grid-cols-12">
         <div class="col-span-2" id="category-container">
           <!-- categoryclass="w-48 h-9 px-2 text-left rounded text-base bg-green-600 text-white" -->
-          <button
+          <a
+            href="./index.html"
             id="all-plants"
-            class="w-48 h-9 px-2 text-left rounded text-base bg-green-600 text-white"
+            class="w-48 h-9 px-2 text-left rounded text-base hover:bg-[#15803D] hover:text-white hover:h-[30px]"
           >
             All Plants
-          </button>
+          </a>
         </div>
 
         <!-- card container -->
@@ -133,6 +134,8 @@
           <h2 class="p-3 font-semibold text-[18px]" id="Addtocart-container">
             Your Cart
           </h2>
+          <!-- <hr class="m-2 border-gray-300" /> -->
+          <div class="text-[13px] ml-25" id="total-price"></div>
         </div>
       </div>
     </section>
@@ -221,6 +224,20 @@
         © 2025 Green Earth. All Rights Reserved.
       </p>
     </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+
+    <dialog id="plant-details-modal" class="modal">
+      <div class="modal-box w-[380px]">
+        <div id="modal-container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
     <!-- js script -->
     <script src="./script.js"></script>

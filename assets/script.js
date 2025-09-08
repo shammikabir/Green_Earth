@@ -58,20 +58,20 @@ const loadCardbyCategory = (id) => {
 const cardcontainer = document.getElementById("card-container");
 
 const displayCard = (plants) => {
-  console.log(plants);
+  // console.log(plants);
   cardcontainer.innerHTML = "";
   plants.forEach((plant) => {
     cardcontainer.innerHTML += `<div class=" bg-white shadow-lg w-[296px] h-[360px] p-3 rounded mb-3">
     <div >
             <img src="${plant.image}" alt="" class="h-[180px] w-full" />
           </div>
-          <h1 class="font-semibold pt-2 id="${plant.id}">${plant.name}</h1>
+          <h1 class="font-semibold pt-2 " id="${plant.id}">${plant.name}</h1>
           <p class="text-gray-500 text-[9px] pt-1 pb-1">${plant.description}</p>
           <div class="flex justify-between pt-1">
             <h1 class="bg-[#DCFCE7] text-green-700 px-1 rounded text-[12px]">
               ${plant.category}
             </h1>
-            <h2 class="font-semibold">$${plant.price}</h2>
+            <h2 class="font-semibold"><span>$</span>${plant.price}</h2>
           </div>
           <button
             type="button"
@@ -97,12 +97,22 @@ const loadspinner = () => {
 // add to cart functionality
 
 const Addtocartcontainer = document.getElementById("Addtocart-container");
-
+const plantdetailsmodal = document.getElementById("plant-details-modal");
+const modalcontainer = document.getElementById("modal-container");
+let cartTotal = 0;
 cardcontainer.addEventListener("click", (e) => {
+  // /////////////////////////////////////////////////////// modal
+  if (e.target.tagName === "H1") {
+    // console.log("modal clicked");
+    const plantID = e.target.id;
+    openModal(plantID);
+  }
+
   if (e.target.innerText === "Add to Cart") {
     // console.log("cart btn clicked");
     const plantname = e.target.parentNode.childNodes[3].innerText;
     const price = e.target.parentNode.childNodes[7].childNodes[3].innerText;
+    const Convertprice = parseFloat(price.replace("$", ""));
 
     const addtocart = document.createElement("div");
     addtocart.innerHTML = `<div class="bg-[#F0FDF4] rounded m-2 p-2 h-[65px]">
@@ -111,13 +121,62 @@ cardcontainer.addEventListener("click", (e) => {
                 <h2 class="text-[14px]">${plantname}</h2>
                 <h3 class="text-[12px] mt-2 text-gray-500"> ${price}</h3>
               </div>
-              <i class="fa-solid fa-xmark text-gray-400"></i>
+              <i class="fa-solid fa-xmark text-gray-400 "></i>
             </div>
-          </div>`;
+           
+          </div>
+           `;
 
     Addtocartcontainer.appendChild(addtocart);
+
+    const totalprice = document.getElementById("total-price");
+    cartTotal += Convertprice;
+    document.getElementById(
+      "total-price"
+    ).innerText = `Total price = ${cartTotal} tk`;
   }
 });
+// modal open data fetch
+const openModal = (id) => {
+  // plantdetailsmodal.showModal();
+  fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    .then((res) => res.json())
+    .then((json) => showdatainModal(json.plants));
+};
 
+const showdatainModal = (plants) => {
+  plantdetailsmodal.showModal();
+
+  modalcontainer.innerHTML = `
+            <h1 class="font-bold pt-2 mb-2 text-[20px]" >${plants.name}</h1> 
+            <img src="${plants.image}" alt="" class="h-[180px] w-full" />
+            <h1 class=" mt-2 mb-2 "> <span class="font-bold text-[13px]">Category:</span>
+            <span class="text-[13px]">${plants.category}</span>
+              
+            </h1>
+            <h2><span class="font-bold text-[13px]">Price:</span> <span class="text-gray-600 text-[13px]">${plants.price}$</span></h2>
+            <p class="text-[10px] pt-2 pb-1"><span class="font-bold text-[13px]">Description:</span><span class="text-[12px]">  ${plants.description}</span></p>`;
+};
+
+// remove div
+Addtocartcontainer.addEventListener("click", (e) => {
+  if (e.target.tagName === "I") {
+    const priceText = e.target.parentNode.childNodes[1].childNodes[3].innerText;
+    // console.log(e.target.parentNode.childNodes[1].childNodes[3].innerText);
+    const price = parseFloat(priceText.replace("$", ""));
+
+    // total
+    cartTotal -= price;
+    const totalPriceEl = document.getElementById("total-price");
+    if (cartTotal > 0) {
+      totalPriceEl.innerText = `Total price = ${cartTotal} tk`;
+    } else {
+      totalPriceEl.innerText = "";
+    }
+
+    // div remove
+    e.target.parentNode.parentNode.remove();
+  }
+});
 loadcategory();
 loaddefaultData();
