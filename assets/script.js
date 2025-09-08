@@ -13,7 +13,7 @@ const displaycategory = (categories) => {
     const button = document.createElement("button");
     button.id = category.id;
     button.className =
-      "w-[200px] h-[35px] px-2  text-left hover:bg-[#15803D] hover:text-white rounded text-[16px]";
+      "md:w-[200px] w-full h-[35px] px-2  text-left hover:bg-[#15803D] hover:text-white rounded md:text-[16px] text-2xl md:mb-0 mb-3";
     button.innerText = category.category_name;
 
     categoryContainer.appendChild(button);
@@ -61,7 +61,7 @@ const displayCard = (plants) => {
   // console.log(plants);
   cardcontainer.innerHTML = "";
   plants.forEach((plant) => {
-    cardcontainer.innerHTML += `<div class=" bg-white shadow-lg w-[296px] h-[360px] p-3 rounded mb-3">
+    cardcontainer.innerHTML += `<div class=" bg-white shadow-lg md:w-[296px] w-[350px] mx-auto h-[360px] p-3 rounded mb-3">
     <div >
             <img src="${plant.image}" alt="" class="h-[180px] w-full" />
           </div>
