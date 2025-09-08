@@ -107,23 +107,32 @@
 
       <div class="grid grid-cols-12">
         <div class="col-span-2" id="category-container">
-          <!-- category -->
+          <!-- categoryclass="w-48 h-9 px-2 text-left rounded text-base bg-green-600 text-white" -->
+          <button
+            id="all-plants"
+            class="w-48 h-9 px-2 text-left rounded text-base bg-green-600 text-white"
+          >
+            All Plants
+          </button>
         </div>
+
+        <!-- card container -->
         <div class="col-span-8 grid grid-cols-3" id="card-container">
           <!-- card -->
+          <div
+            class="fixed inset-0 flex flex-col justify-center items-center bg-white/50 z-50"
+          >
+            <div
+              class="w-12 h-12 border-4 border-blue-800 border-t-transparent rounded-full animate-spin"
+            ></div>
+            <p class="mt-4 text-blue-700 font-medium text-sm">Loading...</p>
+          </div>
         </div>
         <div class="col-span-2 bg-white h-[800px] w-[250px] rounded shadow-sm">
           <!-- add to cart -->
-          <h2 class="p-3 font-semibold text-[18px]">Your Cart</h2>
-          <div class="bg-[#F0FDF4] rounded m-2 p-2 h-[65px]">
-            <div class="flex justify-between items-center">
-              <div>
-                <h2 class="text-[14px]">Mangoo tree</h2>
-                <h3 class="text-[12px] mt-2 text-gray-500">$ price</h3>
-              </div>
-              <i class="fa-solid fa-xmark text-gray-400"></i>
-            </div>
-          </div>
+          <h2 class="p-3 font-semibold text-[18px]" id="Addtocart-container">
+            Your Cart
+          </h2>
         </div>
       </div>
     </section>
