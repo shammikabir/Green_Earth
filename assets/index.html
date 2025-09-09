@@ -36,27 +36,44 @@
   </style>
   <body class="inter bg-[#F0FDF4]">
     <nav class="bg-[#15803D] text-white">
-      <div
-        class="flex md:flex-row flex-col md:justify-between w-11/12 mx-auto items-center py-5"
-      >
+      <div class="flex justify-between items-center w-11/12 mx-auto py-5">
+        <!-- Logo -->
         <h1 class="font-semibold text-xl">Green Earth</h1>
-        <div class="flex md:gap-10 gap-7 md:p-0 md:p-5 p-2">
+
+        <div class="hidden md:flex gap-6 items-center">
           <a href="">About</a>
           <a href="">Gallery</a>
           <a href="">Plant a Tree</a>
         </div>
-        <div>
+
+        <!-- Mobile Right Buttons -->
+        <div class="flex items-center gap-4">
+          <!-- Plant a tree button -->
           <button
             class="btn bg-[#facc15] rounded-xl text-green-800 md:block hidden"
           >
-            Plant a tree
+            Plant a Tree
           </button>
+          <!-- small mobile device -->
           <button
-            class="btn btn-xs md:hidden block mt-2 bg-[#facc15] text-green-800"
+            class="btn btn-xs md:hidden block bg-[#facc15] text-green-800"
           >
-            Plant a tree
+            Plant a Tree
           </button>
+
+          <!-- Hamburger icon -->
+          <button id="menu-btn" class="md:hidden text-3xl">&#9776;</button>
         </div>
+      </div>
+
+      <!-- for Mobile device -->
+      <div
+        id="mobile-menu"
+        class="flex flex-row gap-18 pl-5 pt-3 pb-3 mx-auto bg-[#14532d] border-t border-green-900 rounded-b md:hidden"
+      >
+        <a href="">About</a>
+        <a href="">Gallery</a>
+        <a href="">Plant a Tree</a>
       </div>
     </nav>
 
@@ -93,7 +110,7 @@
           Get Involved
         </button>
         <button
-          class="btn btn-xs md:hidden block ml-[130px] mt-2 bg-[#facc15] text-green-800"
+          class="btn btn-xs md:hidden block mx-auto mt-2 bg-[#facc15] text-green-800"
         >
           Get Involved
         </button>
@@ -113,7 +130,7 @@
           <a
             href="./index.html"
             id="all-plants"
-            class="w-48 h-9 px-2 text-left rounded text-base hover:bg-[#15803D] hover:text-white hover:h-[30px]"
+            class="block w-[200px] h-[35px] px-2 pt-1 text-left rounded hover:bg-[#15803D] hover:text-white md:text-[17px] text-2xl md:mb-0 mb-4"
           >
             All Plants
           </a>
@@ -151,7 +168,7 @@
     <section
       class="mt-30 md:ml-[293px] md:mr-[295px] ml-[30px] mr-[30px] md:mb-30 mb-5"
     >
-      <h1 class="md:text-center font-semibold md:text-3xl text-4xl mb-10">
+      <h1 class="md:text-center font-semibold mx-auto text-3xl mb-10">
         About the Campaign
       </h1>
       <div class="flex md:gap-10 gap-0 md:flex-row flex-col">
@@ -180,19 +197,19 @@
       </h1>
       <div class="flex md:gap-10 gap-1 md:flex-row flex-col w-11/12 mx-auto">
         <div
-          class="border-1 border-gray-300 bg-white md:w-[450px] w-[360px] mx-auto h-[156px] text-center p-10 rounded-xl md:mb-20 mb-5"
+          class="border-1 border-gray-300 bg-white md:w-[450px] w-[340px] mx-auto h-[156px] text-center p-10 rounded-xl md:mb-20 mb-5 hover:bg-[#FACC15]"
         >
           <h1 class="text-green-800 font-semibold text-[32px]">120K+</h1>
           <p class="text-gray-600 text-[16px]">Communities Involved</p>
         </div>
         <div
-          class="border-1 border-gray-300 bg-white md:w-[450px] w-[360px] mx-auto h-[156px] text-center p-10 rounded-xl md:mb-20 mb-5"
+          class="border-1 border-gray-300 bg-white md:w-[450px] w-[340px] mx-auto h-[156px] text-center p-10 rounded-xl md:mb-20 mb-5 hover:bg-[#FACC15]"
         >
           <h1 class="text-green-800 font-semibold text-[32px]">30K+</h1>
           <p class="text-gray-600 text-[16px]">Countries Reached</p>
         </div>
         <div
-          class="border-1 border-gray-300 bg-white md:w-[450px] w-[360px] mx-auto h-[156px] text-center p-10 rounded-xl mb-20"
+          class="border-1 border-gray-300 bg-white md:w-[450px] w-[340px] mx-auto h-[156px] text-center p-10 rounded-xl mb-20 hover:bg-[#FACC15]"
         >
           <h1 class="text-green-800 font-semibold text-[32px]">500K+</h1>
           <p class="text-gray-600 text-[16px]">Tree Planted</p>
@@ -249,7 +266,6 @@
         <div id="modal-container"></div>
         <div class="modal-action">
           <form method="dialog">
-            <!-- if there is a button in form, it will close the modal -->
             <button class="btn">Close</button>
           </form>
         </div>
